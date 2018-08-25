@@ -1032,3 +1032,204 @@ if (message.content.startsWith('!الصراحة')) {
   message.react("??")
 }
 });
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('كس')){
+        message.delete()
+      message.channel.sendMessage("", {embed: {
+        title: "لا تسب",
+        color: 0x06DF00,
+        description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
+        footer: {
+          text: "MohamedSayan"
+        }
+      }}).then(msg => {msg.delete(4000)});
+                          }
+
+     
+}); 
+	
+	
+	
+	
+	
+	
+	
+	
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes(' كس امك')){
+        message.delete()
+      message.channel.sendMessage("", {embed: {
+        title: "لا تسب",
+        color: 0x06DF00,
+        description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
+        footer: {
+          text: "By MohamedSayan"
+        }
+      }}).then(msg => {msg.delete(4000)});
+                          }
+
+     
+}); 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('كس اختك')){
+        message.delete()
+      message.channel.sendMessage("", {embed: {
+        title: "لا تسب",
+        color: 0x06DF00,
+        description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
+        footer: {
+          text: "By MohamedSayan"
+        }
+      }}).then(msg => {msg.delete(4000)});
+                          }
+
+     
+}); 	
+	
+	
+	
+	
+	
+	
+	
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('Fuck')){
+        message.delete()
+      message.channel.sendMessage("", {embed: {
+        title: "لا تسب",
+        color: 0x06DF00,
+        description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
+        footer: {
+          text: "By MohamedSayan"
+        }
+      }}).then(msg => {msg.delete(4000)});
+                          }
+
+     
+}); 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('Fack')){
+        message.delete()
+      message.channel.sendMessage("", {embed: {
+        title: "لا تسب",
+        color: 0x06DF00,
+        description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
+        footer: {
+          text: "By MohamedSayan"
+        }
+      }}).then(msg => {msg.delete(4000)});
+                          }
+
+     
+}); 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('عير')){
+        message.delete()
+      message.channel.sendMessage("", {embed: {
+        title: "لا تسب",
+        color: 0x06DF00,
+        description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
+        footer: {
+          text: "By MohamedSayan"
+        }
+      }}).then(msg => {msg.delete(4000)});
+                          }
+
+     
+}); 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('Fack You')){
+        message.delete()
+      message.channel.sendMessage("", {embed: {
+        title: "لا تسب",
+        color: 0x06DF00,
+        description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
+        footer: {
+          text: "By MohamedSayan"
+        }
+      }}).then(msg => {msg.delete(4000)});
+                          }
+
+     
+}); 
+	
+	
+	
