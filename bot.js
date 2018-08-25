@@ -851,3 +851,184 @@ client.on('message', message => {
 	
 	
 	
+
+const fs = require("fs"); //npm i fs
+const ms = require("ms"); //npm i ms
+let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
+
+client.on('message', message =>{
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    let prefix = '!';
+     
+    if(cmd === `${prefix}warn`) {
+
+  //!warn @daeshan <reason>
+  if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("U don't have enough permissions to warn Users!");
+  let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
+  if(!wUser) return message.reply("yo i can't find this User");
+  if(wUser.hasPermission("ADMINISTRATOR")) return message.reply("This User is very cool why warn him? >.>");
+  let reason = args.join(" ").slice(22);
+
+  if(!warns[wUser.id]) warns[wUser.id] = {
+    warns: 0
+  };
+
+  warns[wUser.id].warns++;
+
+  fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
+    if (err) console.log(err)
+  });
+
+  let warnEmbed = new Discord.RichEmbed()
+  .setDescription("Warns")
+  .setAuthor(message.author.username)
+  .setColor("#fc6400")
+  .addField("Warned User", `<@${wUser.id}>`)
+  .addField("Warned In", message.channel)
+  .addField("Number of Warnings", warns[wUser.id].warns)
+  .addField("Reason", reason);
+
+
+  message.channel.send(warnEmbed);
+
+  if(warns[wUser.id].warns == 2){
+    let muterole = message.guild.roles.find(`name`, "muted");
+    if(!muterole) return message.reply("You should make A **muted** role, to mute this User!!");
+
+    let mutetime = "10s";
+    await(wUser.addRole(muterole.id));
+    message.channel.send(`<@${wUser.id}> Just muted for sometime!`);
+
+    setTimeout(function(){
+      wUser.removeRole(muterole.id)
+      message.reply(`<@${wUser.id}> Just unmuted!`)
+    }, ms(mutetime))
+  }
+  if(warns[wUser.id].warns == 3){
+    message.guild.member(wUser).ban(reason);
+    message.reply(`<@${wUser.id}> Just banned for 3 warns!!`)
+  }
+
+}
+});
+	
+	
+	
+       if (message.content.startsWith(prefix + "كت تويت")) {
+            const cuttweet = [
+                'كت تويت ‏| تخيّل لو أنك سترسم شيء وحيد فيصبح حقيقة، ماذا سترسم؟',
+                'كت تويت | أكثر شيء يُسكِت الطفل برأيك؟',
+                'كت تويت | الحرية لـ ... ؟',
+                'كت تويت | قناة الكرتون المفضلة في طفولتك؟',
+                'كت تويت ‏| كلمة للصُداع؟',
+                'كت تويت ‏| ما الشيء الذي يُفارقك؟',
+                'كت تويت | موقف مميز فعلته مع شخص ولا يزال يذكره لك؟',
+                'كت تويت ‏| أيهما ينتصر، الكبرياء أم الحب؟',
+                'كت تويت | بعد ١٠ سنين ايش بتكون ؟',
+                'كت تويت ‏| مِن أغرب وأجمل الأسماء التي مرت عليك؟',
+                '‏كت تويت | عمرك شلت مصيبة عن شخص برغبتك ؟',
+                'كت تويت | أكثر سؤال وجِّه إليك مؤخرًا؟',
+                '‏كت تويت | ما هو الشيء الذي يجعلك تشعر بالخوف؟',
+                '‏كت تويت | وش يفسد الصداقة؟',
+                '‏كت تويت | شخص لاترفض له طلبا ؟',
+                '‏كت تويت | كم مره خسرت شخص تحبه؟.',
+                '‏كت تويت | كيف تتعامل مع الاشخاص السلبيين ؟',
+                '‏كت تويت | كلمة تشعر بالخجل اذا قيلت لك؟',
+                '‏كت تويت | جسمك اكبر من عٌمرك او العكسّ ؟!',
+                '‏كت تويت |أقوى كذبة مشت عليك ؟',
+                '‏كت تويت | تتأثر بدموع شخص يبكي قدامك قبل تعرف السبب ؟',
+                'كت تويت | هل حدث وضحيت من أجل شخصٍ أحببت؟',
+                '‏كت تويت | أكثر تطبيق تستخدمه مؤخرًا؟',
+                '‏كت تويت | ‏اكثر شي يرضيك اذا زعلت بدون تفكير ؟',
+                '‏كت تويت | وش محتاج عشان تكون مبسوط ؟',
+                '‏كت تويت | مطلبك الوحيد الحين ؟',
+                '‏كت تويت | هل حدث وشعرت بأنك ارتكبت أحد الذنوب أثناء الصيام؟',
+           ]
+          var embed = new Discord.RichEmbed()
+          .setColor('RANDOM')
+           .setThumbnail(message.author.avatarURL) 
+         .addField('لعبه كت تويت' ,
+          `${cuttweet[Math.floor(Math.random() * cuttweet.length)]}`)
+          message.channel.sendEmbed(embed);
+            }
+	
+	
+	
+	
+	const Sra7a = [
+    'صراحه  |  صوتك حلوة؟',
+    'صراحه  |  التقيت الناس مع وجوهين؟',
+    'صراحه  |  شيء وكنت تحقق اللسان؟',
+    'صراحه  |  أنا شخص ضعيف عندما؟',
+    'صراحه  |  هل ترغب في إظهار حبك ومرفق لشخص أو رؤية هذا الضعف؟',
+    'صراحه  |  يدل على أن الكذب مرات تكون ضرورية شي؟',
+    'صراحه  |  أشعر بالوحدة على الرغم من أنني تحيط بك كثيرا؟',
+    'صراحه  |  كيفية الكشف عن من يكمن عليك؟',
+    'صراحه  |  إذا حاول شخص ما أن يكرهه أن يقترب منك ويهتم بك تعطيه فرصة؟',
+    'صراحه  |  أشجع شيء حلو في حياتك؟',
+    'صراحه  |  طريقة جيدة يقنع حتى لو كانت الفكرة خاطئة" توافق؟',
+    'صراحه  |  كيف تتصرف مع من يسيئون فهمك ويأخذ على ذهنه ثم ينتظر أن يرفض؟',
+    'صراحه  |  التغيير العادي عندما يكون الشخص الذي يحبه؟',
+    'صراحه  |  المواقف الصعبة تضعف لك ولا ترفع؟',
+    'صراحه  |  نظرة و يفسد الصداقة؟',
+    'صراحه  |  ‏‏إذا أحد قالك كلام سيء بالغالب وش تكون ردة فعلك؟',
+    'صراحه  |  شخص معك بالحلوه والمُره؟',
+    'صراحه  |  ‏هل تحب إظهار حبك وتعلقك بالشخص أم ترى ذلك ضعف؟',
+    'صراحه  |  تأخذ بكلام اللي ينصحك ولا تسوي اللي تبي؟',
+    'صراحه  |  وش تتمنى الناس تعرف عليك؟',
+    'صراحه  |  ابيع المجرة عشان؟',
+    'صراحه  |  أحيانا احس ان الناس ، كمل؟',
+    'صراحه  |  مع مين ودك تنام اليوم؟',
+    'صراحه  |  صدفة العمر الحلوة هي اني؟',
+    'صراحه  |  الكُره العظيم دايم يجي بعد حُب قوي " تتفق؟',
+    'صراحه  |  صفة تحبها في نفسك؟',
+    'صراحه  |  ‏الفقر فقر العقول ليس الجيوب " ، تتفق؟',
+    'صراحه  |  تصلي صلواتك الخمس كلها؟',
+    'صراحه  |  ‏تجامل أحد على راحتك؟',
+    'صراحه  |  اشجع شيء سويتة بحياتك؟',
+    'صراحه  |  وش ناوي تسوي اليوم؟',
+    'صراحه  |  وش شعورك لما تشوف المطر؟',
+    'صراحه  |  غيرتك هاديه ولا تسوي مشاكل؟',
+    'صراحه  |  ما اكثر شي ندمن عليه؟',
+    'صراحه  |  اي الدول تتمنى ان تزورها؟',
+    'صراحه  |  متى اخر مره بكيت؟',
+    'صراحه  |  تقيم حظك ؟ من عشره؟',
+    'صراحه  |  هل تعتقد ان حظك سيئ؟',
+    'صراحه  |  شـخــص تتمنــي الإنتقــام منـــه؟',
+    'صراحه  |  كلمة تود سماعها كل يوم؟',
+    'صراحه  |  **هل تُتقن عملك أم تشعر بالممل؟',
+    'صراحه  |  هل قمت بانتحال أحد الشخصيات لتكذب على من حولك؟',
+    'صراحه  |  متى آخر مرة قمت بعمل مُشكلة كبيرة وتسببت في خسائر؟',
+    'صراحه  |  ما هو اسوأ خبر سمعته بحياتك؟',
+    '‏صراحه | هل جرحت شخص تحبه من قبل ؟',
+    'صراحه  |  ما هي العادة التي تُحب أن تبتعد عنها؟',
+    '‏صراحه | هل تحب عائلتك ام تكرههم؟',
+    '‏صراحه  |  من هو الشخص الذي يأتي في قلبك بعد الله – سبحانه وتعالى- ورسوله الكريم – صلى الله عليه وسلم؟',
+    '‏صراحه  |  هل خجلت من نفسك من قبل؟',
+    '‏صراحه  |  ما هو ا الحلم  الذي لم تستطيع ان تحققه؟',
+    '‏صراحه  |  ما هو الشخص الذي تحلم به كل ليلة؟',
+    '‏صراحه  |  هل تعرضت إلى موقف مُحرج جعلك تكره صاحبهُ؟',
+     '‏صراحه  |  هل قمت بالبكاء أمام من تُحب؟',
+    '‏صراحه  |  ماذا تختار حبيبك أم صديقك؟',
+    '‏صراحه  | هل حياتك سعيدة أم حزينة؟',
+    'صراحه  |  ما هي أجمل سنة عشتها بحياتك؟',
+    '‏صراحه  |  ما هو عمرك الحقيقي؟',
+    '‏صراحه  |  ما اكثر شي ندمن عليه؟',
+    'صراحه  |  ما هي أمنياتك المُستقبلية؟‏',
+]
+  client.on('message', message => {
+if (message.content.startsWith('!الصراحة')) {
+    if(!message.channel.guild) return message.reply('** This command only for servers **');
+ var client= new Discord.RichEmbed()
+ .setTitle("لعبة صراحة ..")
+ .setColor('RANDOM')
+ .setDescription(`${Sra7a[Math.floor(Math.random() * Sra7a.length)]}`)
+ .setImage("https://cdn.discordapp.com/attachments/371269161470525444/384103927060234242/125.png")
+                 .setTimestamp()
+ 
+  message.channel.sendEmbed(client);
+  message.react("??")
+}
+});
