@@ -8,8 +8,8 @@ client.on("guildMemberAdd", member => {
   return channel.send(` 
 **
 سلام عليكم :heart:
-لو انت مطفر ادخل 5 day بتصير مطنوخ :heart:
-                               [ https://discord.gg/J5hT6eV ] 
+لو سمحت ممكن تدخل سيرفرى  :heart:
+                               [ https://discord.gg/jExeAGW ] 
 الدعووة خاصة لك ... [ ${member}  ]
 **`) 
 }).catch(console.error)
@@ -22,7 +22,7 @@ client.on("guildMemberAdd", member => {
 **
 سلام عليكم 
 لو سمحت ممكن تدخل سيرفرى
-                               [ https://discord.gg/J5hT6eV ] 
+                               [ https://discord.gg/jExeAGW ] 
 الدعووة خاصة لك ... [ ${member}  ]
 **`) 
 }).catch(console.error)
