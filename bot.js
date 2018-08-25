@@ -87,3 +87,87 @@ j = 1;
 });
 
 
+client.on("message", message => { //clear
+              var args = message.content.substring(prefix.length).split(" ");
+              if (message.content.startsWith(prefix + "clear")) {
+                  if(!message.channel.guild) return message.reply('**❌ اسف لكن هذا الامر للسيرفرات فقط **');         
+     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**⚠  لا يوجد لديك صلاحية لمسح الشات**');
+          var msg;
+          msg = parseInt();
+        
+        message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
+        message.channel.sendMessage("", {embed: {
+          title: "``تــم مسح الشات ``",
+          color: 0x5016f3, 
+          footer: {
+            
+          }
+        }}).then(msg => {msg.delete(3000)});
+                            }
+  
+       
+  });
+
+
+client.on('message', message => { 
+    var prefix ="!";
+           if (message.content.startsWith(prefix + "id")) {
+     var args = message.content.split(" ").slice(1);
+     let user = message.mentions.users.first();
+     var men = message.mentions.users.first();
+        var heg;
+        if(men) {
+            heg = men
+        } else {
+            heg = message.author
+        }
+      var mentionned = message.mentions.members.first();
+         var h;
+        if(mentionned) {
+            h = mentionned
+        } else {
+            h = message.member
+        }
+               moment.locale('ar-TN');
+      var id = new  Discord.RichEmbed()
+      .setAuthor(message.author.username, message.author.avatarURL) 
+    .setColor("#707070")
+    .addField(': دخولك لديسكورد قبل', `${moment(heg.createdTimestamp).format('YYYY/M/D HH:mm:ss')} **\n** \`${moment(heg.createdTimestamp).fromNow()}\`` ,true) 
+    .addField(': انضمامك لسيرفر قبل', `${moment(h.joinedAt).format('YYYY/M/D HH:mm:ss')} \n \`${moment(h.joinedAt).fromNow()}\``, true)               
+    .setFooter(`ZeusSHOP`, 'https://lh3.googleusercontent.com/J5k4ZldESjtTT-iO5FL0QaN8wsPPJM1AwR-Ch0TpYlfauWLJ7In_FfOWQQDIjmCBybcqPN2ndySfI3oyXGrsGefimreYJ6dEVyN1Rf-6xdtjx5YyEs8Sr4qjaSONE2x6u0xrz04uK8MRg3g-znyjagB2BL0KTUFfKcyUIgrsiyM_oSjimDzcTDqOM_MWsn1BwOZtH1GB2PrfJbsIEuiW-ajlDwvXZ6P_UGR7l3I0_iTK-3Tbjy22NBX1OlfefEm5fmUupHUU1uQcnpg5j0gFHaubAAonCW38STGg6rl5YvgwT53eex7abAw8zI-Sw7mSz_MLU6wNF-pQjj-j9b0YJRzKBfGkreGQxsbw9OXZ7H9tAqx_IiQQTeW39EIy98-CNCNCTTj2QJpG12g7peJe_JNEphprz1kqnq0T3XLmRsupWIWKPLW2rAlBqsncuMMgMH48RWVuB2lQJkuD4BxbKaGN0iXl7uL-ODW23Wuqd911X2uzlCPQ12xcV0NcYI8LJV0Cj47fYaTnAJbCVBn-7IWP2_gN8_bpTTQYrAI8dWP0tBGdqpZopb4csktABy5qtrjXPSPeTdfgYbcwM9Zcstoeg2yB51wPlOtwDFiqp4ZvfSeL34KXLfD_=s525-no')                                 
+    .setThumbnail(heg.avatarURL);
+    message.channel.send(id)
+}       });
+
+
+
+client.on('guildCreate', guild => {
+  var embed = new Discord.RichEmbed()
+  .setColor(0x5500ff)
+  .setDescription(`**شكراً لك لإضافه البوت الى سيرفرك**`)
+      guild.owner.send(embed)
+});
+
+
+client.on("message", message => {
+    const prefix = "!"
+              
+          if(!message.channel.guild) return;
+   if(message.author.bot) return;
+      if(message.content === prefix + "image"){ 
+          const embed = new Discord.RichEmbed()
+  
+      .setTitle(`This is  ** ${message.guild.name} **  Photo !`)
+  .setAuthor(message.author.username, message.guild.iconrURL)
+    .setColor(0x164fe3)
+    .setImage(message.guild.iconURL)
+    .setURL(message.guild.iconrURL)
+                    .setTimestamp()
+
+   message.channel.send({embed});
+      }
+  });
+
+
+
+
