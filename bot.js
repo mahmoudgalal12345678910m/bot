@@ -1372,7 +1372,6 @@ message.guild.setName(`.ZeusSHOP Community © `)
         .catch(console.error);
   //message.delete().catch(O_o=>{}); 
  
- }
 });
 	
 	
