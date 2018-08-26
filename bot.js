@@ -1669,3 +1669,7 @@ on = مفعل
 off = معطل
 
 */
+
+
+
+client.login(process.env.BOT_TOKEN);
