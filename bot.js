@@ -1207,6 +1207,57 @@ client.on('message', message => {
 	
 	
 	
+client.on('message', message => {
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+
+  if (command == "say") {
+   message.channel.sendMessage(args.join("  "))
+   message.delete()
+  }
+ });
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+client.on('message', message => {
+            if (message.content.startsWith(prefix + "botinfo")) {
+     let embed = new Discord.RichEmbed()
+.addField(' عدد السيرفرات التي بها',`[${client.guilds.size}]  `)
+.addField(' عدد الاعضاء ',` [${client.users.size}] `)
+.addField('الغرف ',`[${client.channels.size}]`) 
+.addField(' البنق ',`[${Date.now() - message.createdTimestamp}]`) 
+.addField('MohamedSayan')
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
+    }
+});
+	
+	
+	
+	
+	
+	
+	
+	
+console.log('Loading....Please Stand by.....');
+client.on('ready', () => {
+  console.log(`Bot Is online now !!`);
+	
+	
 	
 	
 	
@@ -1216,6 +1267,20 @@ client.on('message', message => {
 	
 client.on('message', message => {
     var args = message.content.split(/[ ]+/)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
     if(message.content.includes('Fack You')){
         message.delete()
       message.channel.sendMessage("", {embed: {
@@ -1231,5 +1296,126 @@ client.on('message', message => {
      
 }); 
 	
+
 	
 	
+const pubg = [
+     'PUBG | ما هو اقوي سلاح برائيك ؟',
+     'PUBG | اين تجد سلاح الجروزا ؟ Grozza',
+     'PUBG | ماذا تفضل اكثر ام فور ام سكار ؟',
+     'PUBG | ايهما تفضل vss ام Awm',
+     'PUBG | ماذا تفضل اكثر ؟ سولو ام سكواد ؟',
+     'PUBG | كم جيم كسبت في العبه ؟',
+     'PUBG | ما هو اكثر عدد قتلت في مسيرتك بالعبه',
+     'PUBG | اذا انت المركز ال 2 هل سوف تقوم بتمشي علي رجلك ام ستاخذ سياره تحميك ؟',
+     'PUBG | اذا وجدت شخصين يتقاتلان , هل سوف تتقاتل معهم ام تنتظر قليلا حتي يقتل احدهما الاخر ؟',
+     'PUBG | اذا صديقك بالاسكواد يحتاج مساعده هل تساعده ام تتركه ؟',
+     'PUBG | اذا تم عمل لصديقك كونك اوت وامامك لوت كثير جدا سوف تذهب لتساعده ام تاخذ الوت وتدعه يموت ؟',
+     'PUBG | اين تجد ملابس القناصه ؟ ghillie suit ?',
+     'PUBG | ايهما تفضل ؟ الاختباء حتي يتبقي اشخاص قليله ام تذهب لتقتل ولا تختبئ',
+     'PUBG | اين تفضل ان تهبط من الطائره ؟ الاماكن الهادئيا لوت صغير ام الاماكن المزدحمه بالاعبين لاكن لوت كثير',
+     'PUBG | كم عدد المرات التي فزت بها لوحدك سولو ؟',
+     'PUBG | ما هو افضل سلاح تجيد استخدامه ؟',
+     'PUBG | ما هو اندر سلاح قد تجده برائيك ؟',
+     'PUBG | ما هو اندر سلاح جديد قد تجده برائيك ؟',
+     'PUBG | ما هو عدوك في العبه لاق البنق ام لاق الفريمات الاف بي اس ؟',
+     'PUBG | ايهما تفضل العب ؟ فـ المساء ام الصباح ؟',
+     'PUBG | هل تحب ان يكون الجيم ملئ بلاعبين ام لاعبين قليلين ؟',
+     'PUBG | هل الملابس تعبر عن انك محترف ام لا ؟',
+     'PUBG | كم معك من مال ( كوين ) بلعبه ؟',
+     'PUBG | ما هو اكثر شئ تكرهه في العبه ؟',
+     'PUBG | ما هو اكثر شئ تحبه بلعبه ؟',
+     'PUBG | ماذا تفضل شتو قن ( بندقيه ) ام قناصه ؟',
+     'PUBG | ماذا تفضل اكثر ؟ درع لفل 3 متضرر ام درع لفل 2 غير متضرر',
+     'PUBG | تفضل ان تلعب مع صديقك سكواد ام شخص غريب ؟',
+     'PUBG | هل تظن انك افضل شخص في اصدقائك بهذه اللعبه؟',
+     'PUBG | قيم نفسك من 10 كـ احتراف لك بالعبه',
+     'PUBG | هل فزت جيم من قبل بالعبه ؟',
+     'PUBG | هل وصلت للمركز ال 10 ( توب 10 ) قبل هكذا بلعبه ؟',
+     'PUBG | هل قمت بلعب مع صديقك من قبل بلعبه ؟',
+     'PUBG | هل تعلم من اخترع العبه ؟',
+     'PUBG | لو خيروك لعبه ببجي ام فورت نايت ؟',
+     'PUBG | هل يوجد شخص من اصدقاءك محترف اكثر منك ام انت اكثر شخص محترف ما بين اصدقاءك ؟',
+     'PUBG | اذا كنت من فريق مطورين العبه ماذا ستفعل ؟',
+     'PUBG | قيم من 10 مدي حبك للعبه',
+     'PUBG | هل تحب ان تتكلم صوت مع اصدقاءك وانت تلعب معاهم ام لا تحب هذا الامر ؟',
+ 
+]
+   client.on('message', message => {
+       if (message.author.bot) return;
+ if (message.content.startsWith('!pubg')) {
+     if(!message.channel.guild) return message.reply('** This command only for servers **');
+  var client= new Discord.RichEmbed()
+  .setTitle("لعبه اسئله باتل جرواند")
+  .setColor('#FFA500')
+  .setDescription(`${pubg[Math.floor(Math.random() * pubg.length)]}`)
+  .setImage("https://cdn.discordapp.com/attachments/416617103492251658/477741838292484127/pubg-orange-square.png")
+                  .setTimestamp()
+ 
+   message.channel.sendEmbed(client);
+   message.react("??")
+ }
+});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+client.on('message', message => { 
+    var p = "!"
+        if (message.content.startsWith(p + `alpha`)) {
+message.guild.setName(`.a`)
+.then(msg => {
+ setInterval(() => {
+message.guild.setName(`.Ze`)
+.then(msg => {
+ setInterval(() => {
+message.guild.setName(`.Zeus`) 
+.then(msg => {
+ setInterval(() => {
+message.guild.setName(`.ZeusSH`)
+.then(msg => {
+ setInterval(() => {
+message.guild.setName(`.ZeusSHOP`)
+.then(msg => {
+ setInterval(() => {
+message.guild.setName(`.ZeusSHOP `)
+.then(msg => {
+ setInterval(() => {
+message.guild.setName(`.ZeusSHOP Co `)
+.then(msg => {
+ setInterval(() => {
+message.guild.setName(`.ZeusSHOP Comm `)
+.then(msg => {
+ setInterval(() => {
+message.guild.setName(`.ZeusSHOP Commun `)
+.then(msg => {
+ setInterval(() => {
+message.guild.setName(`.ZeusSHOP Community © `)
+.then(msg => {
+ setInterval(() => {
+message.guild.setName(`.ZeusSHOP Community © `)
+.then(msg => {
+ setInterval(() => {
+}, 11000);
+});
+},  10000);
+});
+},  8000);
+});
+},  6000);
+});
+},  4000);
+});
+},  1000);
+})
+        .catch(console.error);
+  //message.delete().catch(O_o=>{}); 
+ 
+}
+
+});
