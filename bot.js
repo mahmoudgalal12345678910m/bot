@@ -1634,3 +1634,38 @@ client.on('message', async message => {
            })
           }
       });
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+const alpha = require('alpha-codes')
+/*
+نستدعي البكج بتعريفه بأسم alpha
+يجب أن يكون محمل البكج لديك من قبل
+*/
+let al = new alpha.antilinks(client, {message: "[user] = النشر غير مسموح هنا ..", switch: "on"})
+/*
+al = تعريف جديد وراح نعرف فيه الأمر
+new alpha.antilinks = أمر مانع روابط جديد
+client => تعريف الكلينت عندك .. ربما يكون bot
+عمومًا هو اللي معرفه في
+= new Discord.Client()
+
+message: "رسالة المنع للنشر" 
+switch: 
+تفعيل الأمر أولا
+on = مفعل
+off = معطل
+
+*/
