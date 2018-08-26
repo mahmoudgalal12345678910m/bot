@@ -1367,7 +1367,7 @@ const pubg = [
 	
 client.on('message', message => { 
     var p = "!"
-        if (message.content.startsWith(p + `alpha`)) {
+        if (message.content.startsWith(p + `.ZeusSHOP Community ©`)) {
 message.guild.setName(`.a`)
 .then(msg => {
  setInterval(() => {
