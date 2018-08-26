@@ -34,7 +34,6 @@ const sql = require("sqlite");
 ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
 */
 var servers = [];
-var queue = [];
 var guilds = [];
 var queueNames = [];
 var isPlaying = false;
